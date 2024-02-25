@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.span_alert{
+    color: red;
+}
+.result{
+    width: 300px;
+    height: auto;
+    background-color: rgb(15, 7, 22);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.result>p{
+    color: #ffff;
+}
