@@ -1,66 +1,20 @@
-<?php 
-// class Pessoa 
-// {
-//     // Propiedades/atributos
-//     public $nome;
-//     public $idade;
-
-//     // Métodos/funções
-//     public function Falar(){
-//         echo $this -> nome . ", de idade " . $this -> idade. " acabou de falar <br>";
-//     }
-// }
-
-// $rodrigo = new Pessoa();
-// $rodrigo -> nome = "Rodrigo Cavalcante dos Santos";
-// $rodrigo -> idade = "17";
-// $rodrigo -> Falar();
-// // echo $rodrigo -> nome;
-// // var_dump($rodrigo);
-include 'usuarios.php';
-
-// var_dump($user);
-// echo $usuario["nome"];
-class Login
-{
-    private $email;
-    private $senha;
-  
-    public function getEmail() {
-        return $this->email;
-    }
-
-    public function setEmail($e) {
-        $email = filter_var($e, FILTER_SANITIZE_EMAIL);
-        $this->email = $email;
-    }
-    public function getSenha() {
-        return $this->senha;
-    }
-
-    public function setSenha($s) {
-        $senha = htmlspecialchars($s);
-        $this->senha = $senha;
-    }
-
-    public function Logar() {
-        include 'usuarios.php';
-        
-        var_dump($user);
-        if($this->email == $usuario["email"] and $this->senha == $usuario["senha"]){
-            echo "ok";
-        }else{
-            echo "no";
-        }
-    }
-    
-}
-$logar = new Login();
-$logar->setEmail("rodrigocavalcante@gmail.com");
-$logar->setSenha("1345");
-$logar->Logar();
-echo "<br>";
-
-echo $logar->getEmail() . "<br>";
-echo $logar->getSenha();
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça Login</title>
+</head>
+<body>
+    <form action="login.php" method="post">
+        nome:<input type="text" name="nome" id="id_nome">
+        <br>
+        email:<input type="email" name="email" id="id_email">
+        <br>
+        senha:<input type="password" name="senha" id="id_senha">
+        <br>
+        <input type="submit" value="Enviar" name="submit">
+    </form>
+</body>
+</html>
